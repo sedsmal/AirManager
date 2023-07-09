@@ -12,48 +12,6 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/New folder (2).json", {onProgress: UnityProgress});
     </script>
 
-       <script type="text/javascript">
-        var params = {
-            backgroundcolor: "A0A0A0",
-            bordercolor: "000000",
-            textcolor: "FFFFFF",
-            logoimage: "MyLogo.png",
-            progressbarimage: "MyProgressBar.png",
-            progressframeimage: "MyProgressFrame.png"
-        };
-        var u = new UnityObject2({ params: params });
-        u.observeProgress(function (progress) {
-            var $missingScreen = jQuery(progress.targetEl).find(".missing");
-            switch(progress.pluginStatus) {
-                case "unsupported":
-                    showUnsupported();
-                break;
-                case "broken":
-                    alert("You will need to restart your browser after installation.");
-                break;
-                case "missing":
-                    $missingScreen.find("a").click(function (e) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        u.installPlugin();
-                        return false;
-                    });
-                    $missingScreen.show();
-                break;
-                case "installed":
-                    $missingScreen.remove();
-                break;
-                case "first":
-                break;
-            }
-        });
-        jQuery(function(){
-            u.initPlugin(jQuery("#unityPlayer")[0], "Example.unity3d");
-        });
-        </script>
-
-
-    
   </head>
   <body>
    <div id="unityContainer" style="width: 100%; height: 100%"><canvas id="unityCanvas" width: auto height: auto" style="width: 100%; height: 100%"></canvas></div>
