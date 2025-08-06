@@ -9,17 +9,12 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/New folder (2).json", {onProgress: UnityProgress});
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/New folder (3).json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">AirManager</div>
-      </div>
+<body>
+     <div class="webgl-content">
+      <div id="unityContainer" style="width: 100%; height: 100%"><canvas id="#canvas" width: "auto" height: "auto" style="width: 100%; height: 100%"></canvas></div>
     </div>
   </body>
 </html>
